@@ -1,7 +1,10 @@
 const puppeteer = require('puppeteer');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
-const url = 'https://www.une.edu.au/about-une/principal-dates';
+// Get URL and filename from command line arguments or use default values
+const args = process.argv.slice(2);
+const url = args[0] || 'https://www.une.edu.au/about-une/principal-dates';
+const filename = args[1] || 'principal-dates.csv';
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -52,7 +55,7 @@ const url = 'https://www.une.edu.au/about-une/principal-dates';
 
   // CSV file creation
   const csvWriter = createCsvWriter({
-    path: 'events.csv',
+    path: filename,
     header: [
       { id: 'day', title: 'day' },
       { id: 'date', title: 'date' },
@@ -61,6 +64,6 @@ const url = 'https://www.une.edu.au/about-une/principal-dates';
   });
 
   csvWriter.writeRecords(data).then(() => {
-    console.log('CSV file has been written successfully.');
+    console.log(`Data has been scraped and saved to ${filename}`);
   });
 })();

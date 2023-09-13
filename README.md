@@ -12,7 +12,14 @@ To use this script, you'll need Node.js and a few npm packages. Please follow th
 
 ## Usage
 
-_Usage information is intentionally omitted from this README to keep it concise. Please refer to the script file for usage details._
+* Run `npm install`
+* Run `npm run start -- principal_dates_url output_filename`
+
+```bash
+npm run start -- https://www.une.edu.au/about-une/principal-dates principal-dates-2023.csv
+npm run start -- https://www.une.edu.au/about-une/principal-dates/principal-dates-2024 principal-dates-2024.csv
+npm run start -- https://www.une.edu.au/about-une/principal-dates/principal-dates-2025 principal-dates-2025.csv
+```
 
 ## License
 
@@ -20,7 +27,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- [ChatGPT] - https://chat.openai.com/share/901fdf45-424b-4543-92ce-d73051ee6ffd
+- [ChatGPT](https://chat.openai.com/share/901fdf45-424b-4543-92ce-d73051ee6ffd)
 - [Puppeteer](https://pptr.dev/): The headless browser automation library used in this script.
 - [csv-writer](https://www.npmjs.com/package/csv-writer): A simple CSV writer library for Node.js.
 
