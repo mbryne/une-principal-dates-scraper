@@ -1,0 +1,13 @@
+{
+  "name": "web-scraper",
+  "version": "1.0.0",
+  "description": "A web scraper script using Axios and Cheerio",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "puppeteer": "^21.2.0"
+  }
+}
